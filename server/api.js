@@ -28,7 +28,7 @@ app
         res.json({users})
     })
     .post('/user', (req, res)=>{
-        const users = req.body;
+        const users = req.body.user;
 
         res.json({ users });
     })
