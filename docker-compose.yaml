@@ -44,6 +44,7 @@ services:
   web-blog:
     container_name: blog
     image: node:17-alpine
+    restart: always
     volumes:
       - .:/usr/app
     expose:
@@ -54,6 +55,7 @@ services:
   web-profile:
     container_name: profile
     image: node:17-alpine
+    restart: always
     volumes:
       - .:/usr/app
     expose:
@@ -64,6 +66,7 @@ services:
   web-api:
     container_name: api
     image: node:17-alpine
+    restart: always
     volumes:
       - .:/usr/app
     expose:
