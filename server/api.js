@@ -29,6 +29,7 @@ app
     })
     .post('/user', (req, res)=>{
         const users = req.body.user;
+        console.log(req.body)
 
         res.json({ users });
     })
