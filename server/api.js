@@ -7,6 +7,9 @@ const port = 5000;
 app
     .use(bodyParser.json())
     .use(bodyParser.urlencoded())
+    .get('/', (req, res)=>{
+        res.send('it api !')
+    })
     .get('/user', (req, res)=>{
         const users = [{
             name: "Frame",
