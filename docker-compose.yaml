@@ -17,7 +17,7 @@ services:
       - ./nginx/blog-nginx.conf:/etc/nginx/nginx.conf
     environment:
       HTTPS_METHOD: noredirect
-      VIRTUAL_HOST: blog.logathrim.local
+      VIRTUAL_HOST: blog.apec2022th.go.th
 
   nginx-profile:
     container_name: nginx-profile
@@ -28,7 +28,7 @@ services:
       - ./nginx/profile-nginx.conf:/etc/nginx/nginx.conf
     environment:
       HTTPS_METHOD: noredirect
-      VIRTUAL_HOST: profile.logathrim.local
+      VIRTUAL_HOST: profile.apec2022th.go.th
 
   web-blog:
     container_name: blog
