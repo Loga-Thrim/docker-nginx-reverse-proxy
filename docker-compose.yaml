@@ -61,8 +61,8 @@ services:
     command:
       sh -c "cd /usr && mkdir -p app && cd app && npm install yarn && yarn && node server/profile-server.js"
 
-  api:
-    container_name: api
+  web-api:
+    container_name: web-api
     image: node:17-alpine
     volumes:
       - .:/usr/app
