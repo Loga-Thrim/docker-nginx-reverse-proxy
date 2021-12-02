@@ -9,5 +9,27 @@
 <body>
     <h1>Blog page.</h1>
     <p>This is test reverse proxy page.</p>
+
+    <button type="button" onclick="getUser()">Get User</button> <br>
+    <button type="button" onclick="addUser()">Add USer</button>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <script>
+        function getUser(){
+            axios('https://api.apec2022th.go.th/user').then(res=>{
+                console.log(res.data);
+            })
+        }
+        function addUser(){
+            axios({
+                url: "https://api.apec2022th.go.th/user",
+                method: "POST",
+                data: JSON.stringify({user: { name: "Jim", age: 20 }})
+            }).then(res=>{
+                console.log(res.data);
+            })
+        }
+    </script>
 </body>
 </html>

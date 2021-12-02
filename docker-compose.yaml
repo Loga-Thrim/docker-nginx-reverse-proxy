@@ -30,6 +30,17 @@ services:
       HTTPS_METHOD: noredirect
       VIRTUAL_HOST: profile.apec2022th.go.th
 
+  nginx-api:
+    container_name: nginx-api
+    image: nginx
+    expose:
+      - 80
+    volumes:
+      - ./nginx/api-nginx.conf:/etc/nginx/nginx.conf
+    environment:
+      HTTPS_METHOD: noredirect
+      VIRTUAL_HOST: api.apec2022th.go.th
+
   web-blog:
     container_name: blog
     image: node:17-alpine
@@ -50,6 +61,15 @@ services:
     command:
       sh -c "cd /usr && mkdir -p app && cd app && npm install yarn && yarn && node server/profile-server.js"
 
+  api:
+    container_name: api
+    image: node:17-alpine
+    volumes:
+      - .:/usr/app
+    expose:
+      - 5000
+    command:
+      sh -c "cd /usr && mkdir -p app && cd app && npm install yarn && yarn && node server/api.js"
 networks:
   default:
     external:
